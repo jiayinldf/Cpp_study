@@ -15,7 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="第一章.cpp">
+    <ClCompile Include="第1章.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="第8章.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
