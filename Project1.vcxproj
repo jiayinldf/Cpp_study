@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="第1章.cpp" />
     <ClCompile Include="第8章.cpp" />
+    <ClCompile Include="第9章.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
