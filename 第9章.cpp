@@ -191,5 +191,123 @@ int main()
 	return 0;
 }
 
+
+
+//9.5 包含构造函数和析构函数的C++程序
+#include<iostream>
+#include<string>
+using namespace std;
+class Student
+{
+public:
+	Student(int n, string nam, char s)
+	{
+		num = n;
+		name = nam;
+		sex = s;
+		cout << "Constructor called." << endl;
+	}
+	~Student()
+	{
+		cout << "Destructor called." << endl;
+	}
+	void display()
+	{
+		cout << "num:" << num << endl;
+		cout << "name:" << name << endl;
+		cout << "sex:" << sex << endl;
+	}
+private:
+	int num;
+	string name;
+	char sex;
+
+};
+
+int main()
+{
+	Student stud1(10010, "wang_li", 'f');
+	stud1.display();
+	Student stud2(10011, "zhang_fang", 'm');
+	stud2.display();
+	return 0;
+
+}
+
+
+//例题9.6 输出3个立方体的体积，用对象数组方法。
+
+#include<iostream>
+using namespace std;
+class Box
+{
+public:
+	Box(int h = 10, int w = 10, int l = 10) :height(h), width(w), length(l) {}
+	int volume();
+
+private:
+	int height;
+	int width;
+	int length;
+};
+
+int Box::volume()
+{
+	return(height * width * length);
+}
+
+int main() 
+{
+	Box a[3] = {
+		Box(10,12,15),
+		Box(15,18,20),
+		Box(16,20,26)
+	};
+	cout << a[0].volume() << endl;
+	cout << a[1].volume() << endl;
+	cout << a[2].volume() << endl;
+	return 0;
+}
+
+
+//9.5对象指针
+//例题：9.7 用不同的方法输出时间记录器的时、分、秒，注意对象指针的使用方法
+#include<iostream>
+using namespace std;
+class Time
+{
+public:
+	Time(int h, int m, int s);
+	int hour;
+	int minute;
+	int sec;
+	void get_time();
+};
+Time::Time(int h, int m, int s)
+{
+	hour = h;
+	minute = m;
+	sec = s;
+
+}
+
+void Time::get_time()
+{
+	cout << hour << ":" << minute << ":" << sec << endl;
+}
+
+int main()
+{
+	Time t1(10, 13, 56);
+	int* pl = &t1.hour;
+	cout << *pl << endl;
+	t1.get_time();
+	Time* p2 = &t1;
+	p2->get_time();
+	void(Time::*p3)();
+	p3 = &Time::get_time;
+	(t1.*p3)();
+}
+
 */
 
